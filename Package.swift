@@ -8,27 +8,13 @@ let package = Package(
     ],
     targets: [
         .systemLibrary(
-            name: "Cpng"
+            name: "Cpng",            
+            pkgConfig: "png",
+	        providers: [
+		        .brew(["png","z"]),
+		        .apt(["libpng-dev","libz-dev"])
+	        ]
         )
     ]
 )
 
-/*
-let package = Package(
-    name: "Cpng",
-    products: [
-        .library(
-            name: "Cpng",
-            type: .static,
-            targets: ["Cpng"]),
-        ],
-    targets: [
-        .target(
-            name: "Cpng",
-            path: ".",
-            sources: ["Cpng"],
-            publicHeadersPath: "Cpng/include"
-        )
-    ]
-)
-*/

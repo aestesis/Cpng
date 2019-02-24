@@ -1,5 +1,6 @@
 module Cpng {
-  header "png.h"
+  header "stub.h"
   link "z"
+  link "png"
   export *
 }
